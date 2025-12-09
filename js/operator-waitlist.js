@@ -2,11 +2,13 @@
   const form = document.getElementById("operator-form");
   const status = document.getElementById("operator-status");
 
+  // Determine API base URL (localhost for dev, Render for prod)
   const API_BASE =
     window.location.hostname === "localhost"
       ? "http://localhost:5000"
-      : "https://blyz-server.onrender.com"; // Render URL here
+      : "https://blyz-server.onrender.com";
 
+  // Helper to update status message
   function setStatus(msg, type = "info") {
     status.textContent = msg;
     status.classList.remove("error", "success");
@@ -18,18 +20,25 @@
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
 
+    // Get values from form
     const name = document.getElementById("op-name").value.trim();
     const email = document.getElementById("op-email").value.trim();
-    const phone = document.getElementById("op-phone").value.trim();
     const vehicle = document.getElementById("op-vehicle").value;
 
+    // Simple validation
+    if (!name || !email || !vehicle) {
+      setStatus("Please fill in all required fields.", "error");
+      return;
+    }
+
+    // Show submitting status
     setStatus("Submitting…");
 
     try {
       const res = await fetch(`${API_BASE}/api/waitlist/operator`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, email, phone, vehicle }),
+        body: JSON.stringify({ name, email, vehicle }), // phone removed
       });
 
       const data = await res.json();
@@ -42,6 +51,7 @@
       }
     } catch (err) {
       setStatus("Network error — try again.", "error");
+      console.error(err);
     }
   });
 })();
