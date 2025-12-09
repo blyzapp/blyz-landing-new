@@ -127,35 +127,6 @@ body {
 }
 
 /* =========================
-   CTA BUTTONS
-========================= */
-.cta-buttons {
-  margin-top: 20px;
-  display: flex;
-  justify-content: center;
-  gap: 12px;
-}
-
-.btn-outline {
-  padding: 10px 20px;
-  background: transparent;
-  border: 1px solid rgba(255,255,255,0.25);
-  border-radius: 30px;
-  color: white;
-  cursor: pointer;
-}
-
-.btn-primary {
-  padding: 10px 20px;
-  background: #1e90ff;
-  border-radius: 30px;
-  border: none;
-  color: black;
-  font-weight: 600;
-  cursor: pointer;
-}
-
-/* =========================
    FOOTER
 ========================= */
 .footer-text {

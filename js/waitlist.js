@@ -1,4 +1,4 @@
-(function () {
+((function () {
   const form = document.getElementById("waitlist-form");
   const status = document.getElementById("waitlist-status");
 
