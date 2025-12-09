@@ -1,190 +1,28 @@
-/* ============================
-   GLOBAL RESET
-============================ */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
 body {
   margin: 0;
   padding: 0;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
-    "Segoe UI", sans-serif;
   background: black;
   color: white;
-  min-height: 100vh;
+  font-family: system-ui, sans-serif;
   overflow-x: hidden;
 }
-
-/* ----- Snow animation ----- */
-.snow {
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  background-image: url('images/snow.png');
-  background-size: cover;
-  opacity: 0.4;
-  animation: snowfall 12s linear infinite;
-}
-
-@keyframes snowfall {
-  0% { background-position: 0 0; }
-  100% { background-position: 0 1000px; }
-}
-
-/* ----- Container layout ----- */
-.container {
-  min-height: 100vh;
-  max-width: 680px;
-  margin: auto;
-  padding: 80px 20px;
-  text-align: center;
-  position: relative;
-  z-index: 10;
-}
-
-/* Badge */
-.badge {
-  display: inline-block;
-  padding: 8px 18px;
-  border-radius: 20px;
-  border: 1px solid rgba(255,255,255,0.25);
-  background: rgba(255,255,255,0.1);
-  font-size: 14px;
-  backdrop-filter: blur(6px);
-}
-
-/* Logo */
-.logo-wrapper {
-  margin-top: 30px;
-}
-
-.logo {
-  width: 280px;
-  max-width: 80%;
-  display: block;
-  margin: auto;
-  filter: drop-shadow(0 0 25px #00a2ff);
-}
-
-/* Subtitle */
-.subtitle {
-  font-size: 32px;
-  font-weight: 600;
-  color: #60b6ff;
-  margin-top: 12px;
-}
-
-/* Features */
-.features {
-  margin-top: 12px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px 16px;
-  justify-content: center;
-  color: rgba(255,255,255,0.6);
-  font-size: 14px;
-}
-
-/* Email signup */
-.email-box {
-  margin-top: 28px;
-  display: flex;
-  background: rgba(255,255,255,0.08);
-  border: 1px solid rgba(255,255,255,0.25);
-  backdrop-filter: blur(6px);
-  padding: 8px 12px;
-  border-radius: 40px;
-}
-
-.email-box input {
-  flex: 1;
-  background: transparent;
-  border: none;
-  outline: none;
-  color: white;
-  font-size: 16px;
-}
-
-.email-box ::placeholder {
-  color: rgba(255,255,255,0.35);
-}
-
-.email-box button {
-  background: #2196f3;
-  border: none;
-  padding: 10px 18px;
-  border-radius: 30px;
-  color: black;
-  font-weight: 600;
-  cursor: pointer;
-}
-
-/* Buttons */
-.cta-buttons {
-  margin-top: 20px;
-  display: flex;
-  justify-content: center;
-  gap: 12px;
-}
-
-.btn-outline {
-  padding: 10px 20px;
-  background: transparent;
-  border: 1px solid rgba(255,255,255,0.25);
-  border-radius: 30px;
-  color: white;
-  cursor: pointer;
-}
-
-.btn-primary {
-  padding: 10px 20px;
-  background: #1e90ff;
-  border-radius: 30px;
-  border: none;
-  color: black;
-  font-weight: 600;
-  cursor: pointer;
-}
-
-.btn-primary:disabled {
-  opacity: 0.7;
-  cursor: default;
-}
-
-/* Footer text */
-.footer-text {
-  margin-top: 50px;
-  color: rgba(255,255,255,0.4);
-  font-size: 14px;
-}
-
-/* ⭐ Operator CTA */
-.operator-cta {
-  margin-top: 20px;
-  text-align: center;
-}
-
-.operator-link {
-  color: #00aaff;
-  font-weight: bold;
-  font-size: 1.1rem;
-  text-decoration: none;
-}
-
-.operator-link:hover {
-  text-decoration: underline;
-}
-
-/* ============================
-   RESPONSIVE
-============================ */
-@media (max-width: 768px) {
-  .container {
-    padding: 56px 20px;
-  }
-}
+.snow { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; background-image: url('images/snow.png'); background-size: cover; opacity: 0.4; animation: snowfall 12s linear infinite; }
+@keyframes snowfall { 0% { background-position: 0 0; } 100% { background-position: 0 1000px; } }
+.container { min-height: 100vh; max-width: 680px; margin: auto; padding: 80px 20px; text-align: center; position: relative; z-index: 10; }
+.badge { display: inline-block; padding: 8px 18px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.25); background: rgba(255,255,255,0.1); font-size: 14px; backdrop-filter: blur(6px); }
+.logo-wrapper { margin-top: 30px; }
+.logo { width: 280px; max-width: 80%; display: block; margin: auto; filter: drop-shadow(0 0 25px #00a2ff); }
+.subtitle { font-size: 32px; font-weight: 600; color: #60b6ff; margin-top: 12px; }
+.features { margin-top: 12px; display: flex; flex-wrap: wrap; gap: 8px 16px; justify-content: center; color: rgba(255,255,255,0.6); font-size: 14px; }
+.email-box { margin-top: 28px; display: flex; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.25); backdrop-filter: blur(6px); padding: 8px 12px; border-radius: 40px; }
+.email-box input { flex: 1; background: transparent; border: none; outline: none; color: white; font-size: 16px; }
+.email-box ::placeholder { color: rgba(255,255,255,0.35); }
+.email-box button { background: #2196f3; border: none; padding: 10px 18px; border-radius: 30px; color: black; font-weight: 600; cursor: pointer; }
+.cta-buttons { margin-top: 20px; display: flex; justify-content: center; gap: 12px; }
+.btn-outline { padding: 10px 20px; background: transparent; border: 1px solid rgba(255,255,255,0.25); border-radius: 30px; color: white; cursor: pointer; }
+.btn-primary { padding: 10px 20px; background: #1e90ff; border-radius: 30px; border: none; color: black; font-weight: 600; cursor: pointer; }
+.footer-text { margin-top: 50px; color: rgba(255,255,255,0.4); font-size: 14px; }
+.operator-cta { margin-top: 20px; text-align: center; }
+.operator-link { color: #00aaff; font-weight: bold; font-size: 1.1rem; text-decoration: none; }
+.operator-link:hover { text-decoration: underline; }
+@media (max-width: 768px) { .container { padding: 56px 20px; } }
